@@ -9,10 +9,12 @@
   </div>
 </template>
 <script>
+import { qkObj} from '@/store/common'
   export default {
     setup() {
       const go = () => {
-        window.history.pushState(null, '/apps', '/apps')  //主页路由
+        qkObj.routeObj.push('/apps')
+        //window.history.pushState(null, '/apps', '/apps')  //主页路由
       }
       return {
         go

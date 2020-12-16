@@ -4,13 +4,17 @@ import { createApp } from 'vue';
 import App from './App.vue';
 import router from './router';
 import store from './store';
+import { qkObj } from './store/common';
 import '@/permission'
 let routers = null;
 let instance = null;
 
 function render(props = {}) {
-  //const { container,appRouters } = props;
-  const { container } = props;
+  const { container,appRouters } = props;
+  if (container) {
+    qkObj.routeObj = appRouters
+  }
+ // const { container } = props;
   instance = createApp(App);
   // if (appRouters.length > 0) {
   //   appRouters.forEach(element => {
